@@ -12,4 +12,4 @@ function calcularPerimetroRectangulo(a, b) {
   
   let perimetro = calcularPerimetroRectangulo(ladoA, ladoB);
   
-  document.write(`El perímetro del rectángulo es ${perimetro}.`);
+  document.write(`<h2>El perímetro del rectángulo es</h2> ${perimetro}.`);
