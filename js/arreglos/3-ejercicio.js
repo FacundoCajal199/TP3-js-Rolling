@@ -1,4 +1,4 @@
-/*3- Escribir un script que simule el lanzamiento de dos dados. Hacer uso de la función Math.random para obtener números aleatorios entre 1 y 6 para cada uno de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y anotar en un array el número de apariciones de dicha suma, repitiendo 50 veces esta operación. 
+/*3- Escribir un script que simule el lanzamiento de dos dados. Hacer uso de la función Math.random para obtener números aleatorios entre 1 y 6 para cada uno de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y anotar en un array y tambien el número de apariciones de dicha suma y anotar en un array, repitiendo 50 veces esta operación. 
 
 
 
@@ -32,3 +32,27 @@ for (let i = 0; i < resultados.length; i++) {
 }
 document.write("</table>");
 */
+
+// Inicializamos un array para almacenar los resultados de los lanzamientos de dados
+let resultados = [];
+
+// Inicializamos un array para almacenar el número de apariciones de cada suma posible
+let sumas = new Array(11).fill(0);
+
+// Repetimos el proceso de lanzamiento 50 veces
+for (let i = 0; i < 50; i++) {
+  // Obtenemos números aleatorios entre 1 y 6 para los dos dados
+  let dado1 = Math.floor(Math.random() * 6) + 1;
+  let dado2 = Math.floor(Math.random() * 6) + 1;
+
+  // Sumamos los resultados de los dos dados y lo anotamos en el array de resultados
+  let suma = dado1 + dado2;
+  resultados.push(suma);
+
+  // Incrementamos el contador de la suma correspondiente en el array de sumas
+  sumas[suma - 2]++;
+}
+
+// Imprimimos los resultados
+document.write("Resultados de los lanzamientos de dados: " + resultados);
+document.write("<br>Número de apariciones de cada suma posible: " + sumas);
